@@ -1,0 +1,29 @@
+
+.feature-center{
+	text-align: center !important;
+}
+.feature-center .icon i {
+	display: table-cell;
+    vertical-align: middle;
+    font-size:50px;
+    color: #F78536;
+}
+.heading-section{
+	margin-bottom: 3em !important;
+}
+.feature-copy h3
+{
+	line-height: 1.8em !important;
+}
+#fh5co-work-section, #fh5co-car, #fh5co-blog-section, #fh5co-features, #fh5co-tours, #fh5co-testimonial, .fh5co-content-section{
+	padding: 4em 0 !important;
+}
+
+.fh5co-cover, .fh5co-hero{
+	height:auto !important;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+	height:450px !important;
+	width: 100% !important;
+}
+

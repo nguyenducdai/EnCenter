@@ -1,0 +1,1 @@
+@extends('Site.layout.app')
