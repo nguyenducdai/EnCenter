@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Quản lý Nội dung</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{url('admin/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -19,7 +19,11 @@
     <!-- Custom CSS -->
     <link href="{{url('admin/css/sb-admin-2.css')}}" rel="stylesheet">
     <link href=" https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-   
+      <!-- DataTables CSS -->
+    <link href="{{url('admin/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet')}}">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{{url('admin/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="{{url('admin/morrisjs/morris.css')}}" rel="stylesheet">
@@ -42,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">English Center</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -274,73 +278,38 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="{{Url('cp/user/index')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý thành viên</a>
+                          
+                        </li>
+                 
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Quản lý nội dung<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="{{route('cp.news.danhmuc')}}">Danh Tin tức</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{route('cp.news.index')}}">Tin Tưc</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Slide</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="#">Khóa Học</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Quản lý liên hệ<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="#">Liên hệ</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
+                                    <a href="#">Giới thiệu</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -365,6 +334,8 @@
         </nav>
 
         <div id="page-wrapper">
+
+            @yield('admin-content')
           
         </div>
         <!-- /#page-wrapper -->
@@ -385,9 +356,20 @@
     <script src="{{url('admin/raphael/raphael.min.js')}}"></script>
     <script src="{{url('admin/morrisjs/morris.min.js')}}"></script>
     <script src="{{url('admin/morris-data.js')}}"></script>
+    <script src="{{url('admin/datatables/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{url('admin/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{url('admin/datatables-responsive/dataTables.responsive.js')}}"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="{{url('admin/js/sb-admin-2.js')}}"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
 
 </body>
 

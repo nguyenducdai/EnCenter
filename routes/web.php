@@ -13,3 +13,6 @@
 require_once "site.php";
 
 require_once "admin.php";
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
