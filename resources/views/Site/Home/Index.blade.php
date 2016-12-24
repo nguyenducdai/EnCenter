@@ -68,38 +68,28 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="{{ url('site/images/treem.jpg')}}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>Tiếng Anh giao tiếp</h3>
-								<span>3 nights + Flight 5*Hotel</span>
-								<a class="btn btn-primary btn-outline" href="#">Xem Chi Tiết <i class="icon-arrow-right22"></i></a>
-							</div>
+				@foreach($model as $item)
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn" id="box-trainning">
+
+						<img src="{{url('upload',$item->image)}}" alt="{{$item->title}}" class="img-responsive" id="img-traning" style="height:150px">
+						<div class="desc">
+							<span></span>
+							<h4>{{$item->title}}</h4>
+							<span>Học Phí : <?php echo number_format($item->price)?> (Vnd)</span><br>
+							<span>Tình trạng :
+								@if($item->status == 0)
+									<b class="text-success">{{"Mở"}}</b>
+								@endif
+							 </span><br>
+
+							<a class="btn btn-primary btn-outline" href="{{route('cp.home.detail',$item->id)}}">Xem Chi Tiết <i class="icon-arrow-right22"></i></a>
 						</div>
+
 					</div>
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="{{ url('site/images/dilam.jpg')}}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>Tiếng Anh Dành Cho Người Đi Làm</h3>
-								<span>4 nights + Flight 5*Hotel</span>
-								<a class="btn btn-primary btn-outline" href="#">>Xem Chi Tiết <i class="icon-arrow-right22"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src="{{ url('site/images/chungchi.jpg')}}" alt="" class="img-responsive">
-							<div class="desc">
-								<span></span>
-								<h3>Tiếng Anh Chứng Chỉ</h3>
-								<span>2 nights + Flight 4*Hotel</span>
-								<a class="btn btn-primary btn-outline" href="#">Xem Chi Tiết <i class="icon-arrow-right22"></i></a>
-							</div>
-						</div>
-					</div>
+				@endforeach
+			
 					<div class="col-md-12 text-center animate-box">
-						<p><a class="btn btn-primary btn-outline btn-lg" href="#">Xem Thêm<i class="icon-arrow-right22"></i></a></p>
+						<p><a class="btn btn-primary btn-outline btn-lg" href="{{route('cp.home.archive')}}">Xem Thêm<i class="icon-arrow-right22"></i></a></p>
 					</div>
 				</div>
 			</div>
@@ -113,86 +103,21 @@
 							</div>
 						</div>
 				<div class="row">
+				@foreach($new as $item)
 					<div class="col-md-4 animate-box">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-hotairballoon"></i>
+								<img src="{{url('upload',$item->Image)}}">
 							</span>
 							<div class="feature-copy">
-								<h3>Family Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
+								<h3><a href="{{route('cp.home.detail.new',$item->id)}}">{{$item->Title}}</a></h3>
+								<p>{{ substr($item->Descation, 1,100)}}</p>
+								<p><a href="{{route('cp.home.detail.new',$item->id)}}">Xem Thêm</a></p>
 							</div>
 						</div>
 
 					</div>
-
-					<div class="col-md-4 animate-box">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-search"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Travel Plans</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-wallet"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Honeymoon</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 animate-box">
-
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-wine"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Business Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="col-md-4 animate-box">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-genius"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Solo Travel</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-chat"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Explorer</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								<p><a href="#">Learn More</a></p>
-							</div>
-						</div>
-					</div>
+				@endforeach
 				</div>
 			</div>
 		</div>
@@ -206,52 +131,6 @@
 				</div>
 			</div>
 			<div class="container">
-				<!-- <div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="{{ url('site/images/place-1.jpg')}}" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">30% Discount to Travel All Around the World</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Planning for Vacation</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/place-3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href="#">Visit Tokyo Japan</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-				</div> -->
 			</div>
 		</div>
 		<!-- fh5co-blog-section -->

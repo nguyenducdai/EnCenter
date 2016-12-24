@@ -765,7 +765,7 @@ div.cs-select span {
   transition: 0.5s;
 }
 .fh5co-tours > div:after {
-  opacity: 1;
+  /*opacity: 1;
   visibility: visible;
   content: "";
   position: absolute;
@@ -777,7 +777,7 @@ div.cs-select span {
   z-index: 8;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
-  transition: 0.5s;
+  transition: 0.5s;*/
 }
 .fh5co-tours > div .desc {
   position: absolute;

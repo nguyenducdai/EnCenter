@@ -297,7 +297,7 @@
                                     <a href="#">Slide</a>
                                 </li>
                                 <li>
-                                    <a href="#">Khóa Học</a>
+                                    <a href="{{route('cp.khoahoc.index')}}">Khóa Học</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -345,6 +345,7 @@
 
     <!-- jQuery -->
     <script src="{{url('js/app.js')}}"></script>
+     <script src="{{url('js/jquery.priceformat.min.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{url('admin/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -368,6 +369,13 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
+
+     $('#pricew').priceformat({
+         defaultValue: 0,
+         decimalSeparator: '.',
+         thousandsSeparator: ','
+     });
+
     });
     </script>
 

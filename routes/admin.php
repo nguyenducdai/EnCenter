@@ -76,7 +76,42 @@ Route::Group(['prefix'=>'cp'], function(){
         ]); 
 
 
+         /*KHOA HOC MANAGE*/
 
+         Route::get('khoahoc/index',[
+            'as'=>'cp.khoahoc.index',
+            'uses'=>'Admin\KhoaHocController@Index'
+        ]); 
+
+         Route::get('khoahoc/create',[
+            'as'=>'cp.khoahoc.create',
+            'uses'=>'Admin\KhoaHocController@Create'
+        ]); 
+
+        Route::post('khoahoc/do/create',[
+            'as'=>'cp.khoahoc.Dcreate',
+            'uses'=>'Admin\KhoaHocController@DCreate'
+        ]); 
+
+        Route::get('khoahoc/del/{id}',[
+            'as'=>'cp.khoahoc.del',
+            'uses'=>'Admin\KhoaHocController@Del'
+        ]); 
+
+        Route::get('khoahoc/edit/{id}',[
+            'as'=>'cp.khoahoc.edit',
+            'uses'=>'Admin\KhoaHocController@Edit'
+        ]); 
+
+        Route::post('khoahoc/edit/{id}',[
+            'as'=>'cp.khoahoc.Dedit',
+            'uses'=>'Admin\KhoaHocController@DEdit'
+        ]);
+
+        Route::get('khoahoc/detail/{id}',[
+            'as'=>'cp.khoahoc.detail',
+            'uses'=>'Admin\KhoaHocController@Detail'
+        ]); 
 });
 
 
