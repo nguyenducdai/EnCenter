@@ -3,13 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>En-center</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-	<link rel="shortcut icon" href="favicon.ico">
-
+	<title>The Future</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
@@ -40,16 +34,16 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-piechart"></i>En-Center</a></h1>
+					<h1 id="fh5co-logo"><a href="{{ url("/")}}"><i class="icon-piechart"></i>The Future</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="index.html">Trang Chủ</a></li>
+							<li class="active"><a href="{{ url("/")}}">Trang Chủ</a></li>
 							
-							<li><a href="flight.html"> Giới Thiệu</a></li>
-							<li><a href="hotel.html">Tin Tức - Sự Kiện</a></li>
-							<li><a href="car.html">Chướng Trình Học</a></li>
-							<li><a href="contact.html">Liên Hệ</a></li>
+							<li><a href="{{route('cp.home.gioithieu')}}"> Giới Thiệu</a></li>
+							<li><a href="{{route('cp.home.archive.new')}}">Tin Tức - Sự Kiện</a></li>
+							<li><a href="{{route('cp.home.archive')}}">Khóa Học</a></li>
+							<li><a href="{{route('cp.home.lienhe')}}">Liên Hệ</a></li>
 							 @if (Auth::guest())
 							<li><a href="{{ url('/login') }}">Đăng Nhập | Đăng ký</a></li>
 							@else
@@ -59,6 +53,7 @@
                                 </a>
 
                                 <ul class="fh5co-sub-menu">
+                                    <li><a href="{{route('cp.home.profile')}}">Profile</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

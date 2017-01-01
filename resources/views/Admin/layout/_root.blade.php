@@ -281,6 +281,11 @@
                             <a href="{{Url('cp/user/index')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý thành viên</a>
                           
                         </li>
+
+                        <li>
+                            <a href="{{route('cp.hocvien.index')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý Học viên</a>
+                          
+                        </li>
                  
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Quản lý nội dung<span class="fa arrow"></span></a>
@@ -294,7 +299,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">Slide</a>
+                                    <a href="{{route('cp.slide.index')}}">Slide</a>
                                 </li>
                                 <li>
                                     <a href="{{route('cp.khoahoc.index')}}">Khóa Học</a>

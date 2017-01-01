@@ -76,6 +76,35 @@ Route::Group(['prefix'=>'cp'], function(){
         ]); 
 
 
+        Route::get('tintuc/create',[
+            'as'=>'cp.news.add',
+            'uses'=>'Admin\NewsController@Add'
+        ]); 
+
+        Route::post('tintuc/dcreate',[
+            'as'=>'cp.news.Dcreate',
+            'uses'=>'Admin\NewsController@DAdd'
+        ]);
+
+         Route::get('tintuc/del/{id}',[
+            'as'=>'cp.news.del',
+            'uses'=>'Admin\NewsController@Del'
+        ]);
+
+        Route::get('tintuc/edit/{id}',[
+            'as'=>'cp.news.edit',
+            'uses'=>'Admin\NewsController@Edit'
+        ]);
+
+          Route::post('tintuc/dedit/{id}',[
+            'as'=>'cp.news.Dedit',
+            'uses'=>'Admin\NewsController@DEdit'
+        ]);
+
+
+      
+
+
          /*KHOA HOC MANAGE*/
 
          Route::get('khoahoc/index',[
@@ -112,6 +141,68 @@ Route::Group(['prefix'=>'cp'], function(){
             'as'=>'cp.khoahoc.detail',
             'uses'=>'Admin\KhoaHocController@Detail'
         ]); 
+
+
+        //Học vien
+
+
+         Route::get('hocvien/index',[
+            'as'=>'cp.hocvien.index',
+            'uses'=>'Admin\HocvienController@index'
+        ]); 
+
+        Route::get('hocvien/del/{id}',[
+            'as'=>'cp.hocvien.del',
+            'uses'=>'Admin\HocvienController@Del'
+        ]); 
+
+
+         Route::get('hocvien/create',[
+            'as'=>'cp.hocvien.add',
+            'uses'=>'Admin\HocvienController@Add'
+        ]); 
+
+        Route::post('hocvien/create',[
+            'as'=>'cp.hocvien.Dcreate',
+            'uses'=>'Admin\HocvienController@Dcreate'
+        ]);
+
+
+        //SLIDE
+
+         Route::post('slide/create',[
+            'as'=>'cp.slide.Dcreate',
+            'uses'=>'Admin\SlideController@Dcreate'
+        ]);
+
+          Route::get('slide/create',[
+            'as'=>'cp.slide.create',
+            'uses'=>'Admin\SlideController@create'
+        ]);
+
+        Route::get('slide/index',[
+            'as'=>'cp.slide.index',
+            'uses'=>'Admin\SlideController@Index'
+        ]);
+
+        Route::get('slide/del/{id}',[
+            'as'=>'cp.slide.del',
+            'uses'=>'Admin\SlideController@Del'
+        ]);
+        Route::get('slide/edit/{id}',[
+            'as'=>'cp.slide.edit',
+            'uses'=>'Admin\SlideController@Edit'
+        ]);
+
+        Route::post('slide/dedit/{id}',[
+            'as'=>'cp.slide.dedit',
+            'uses'=>'Admin\SlideController@DEdit'
+        ]);
+
+
+
+
+
 });
 
 

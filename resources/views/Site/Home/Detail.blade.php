@@ -36,7 +36,7 @@
 						    </div> 
 
 					   </div>
-					  <div class="panel panel-success">
+					  <div class="panel panel-success" id="panel-xyz">
 					      <div class="panel-heading">Đăng Ký khóa học ngay</div>
 					      <div class="panel-body">
 					      	@if(!Auth::user())
@@ -92,13 +92,13 @@
 
 					<div class="col-md-4 " id="right">
 						<div class="alert alert-success">
-					  			<h3>Tin tức mới</h3>
+					  			<p>Tin tức mới</p>
 						</div>
 						@foreach($new as $item)
 							<div class="jumbotron">
 								<div class="media">
 								  <a class="media-left" href="{{route('cp.home.detail.new',$item->id)}}">
-								    <img class="media-object" src="{{Url("upload",$item->Image)}}" alt="Generic placeholder image">
+								    <img class="media-object" src="{{Url("upload",$item->Image)}}" alt="Generic placeholder image" style="width:100px">
 								  </a>
 								  <div class="media-body">
 								    <h5 class="media-heading"><a href="{{route('cp.home.detail.new',$item->id)}}">{{ $item->Title}}</a></h5>

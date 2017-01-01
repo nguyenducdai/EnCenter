@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class KhoahocTable extends Migration
+class CreateSlideTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class KhoahocTable extends Migration
      */
     public function up()
     {
-        Schema::create('khoahoc', function (Blueprint $table) {
+        Schema::create('slide', function (Blueprint $table) {
              $table->increments('id');
-             $table->string('title');
-             $table->string('descaption');
-             $table->text('content');
-             $table->decimal('price',18,2);
-             $table->string('image');
-             $table->integer('sohocvien');
+             $table->string('HinhAnh');
              $table->integer('status');
              $table->timestamps();
         });

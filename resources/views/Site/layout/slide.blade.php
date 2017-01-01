@@ -2,19 +2,22 @@
 			  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <?php 
+                    for ($i=1; $i <= count($slides) ; $i++) { ?>
+                      <li data-target="#carousel-example-generic" data-slide-to="<?php echo $i?>"></li>
+                     <?php } ?>
+
                 </ol>
                 <div class="carousel-inner">
+         
                     <div class="item active">
-                        <img src="{{url('site/images/Banner-hoinhap.jpg')}}" alt="First slide">
+                        <img src="{{url('upload/slide',$slide->HinhAnh)}}" alt="First slide">
                     </div>
+                @foreach($slides as $item)
                     <div class="item">
-                        <img src="{{url('site/images/image0012.jpg')}}" alt="Second slide">
+                        <img src="{{url('upload/slide',$item->HinhAnh)}}"" alt="Second slide">
                     </div>
-                    <div class="item">
-                        <img src="{{url('site/images/tranh-4.jpg')}}" alt="Third slide">
-                    </div>
+                @endforeach
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"

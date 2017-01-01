@@ -4,8 +4,8 @@
     <div class="col-lg-12">
         <div class="col-lg-6"><h2 class="page-header">Tin tức</h2></div>
         <div class="col-lg-6 page-header">
-            <form action=""  method="get">
-                  <button type="submit"  disabled="disabled" class="btn btn-primary pull-right">Thêm Mới</button>
+            <form action="{{route('cp.news.add')}}"  method="get">
+                  <button type="submit" class="btn btn-primary pull-right">Thêm Mới</button>
             </form>
         </div>
     </div>
@@ -17,6 +17,8 @@
         <div class="panel-heading">
             Table manage News
         </div>
+
+         @include('Admin.block.success')
         <!-- /.panel-heading -->
         <div class="panel-body">
             <div class="table-responsive">
@@ -48,16 +50,16 @@
                                 @if($item['Status'] == 0)
                                 <button class="btn btn-success btn-xs">{{"enable"}}</button>
                                 @else
-                                 {{"disable"}}
+                                   <button class="btn btn-warning btn-xs">{{"disable"}}</button>
                                  @endif
                              </td>
-                            <td> <a href="#" onclick = "alert('update coming soon')"><span class="glyphicon glyphicon-edit"></span> </a></td>
-                            <td class="center"> <a href="" onclick = "alert('update coming soon')"><span class="glyphicon glyphicon-trash"></span> </a>
+                            <td> <a href="{{route('cp.news.edit',$item['id'])}}" ><span class="glyphicon glyphicon-edit"></span> </a></td>
+                            <td class="center"> <a href="{{route('cp.news.del',$item['id'])}}"><span class="glyphicon glyphicon-trash"></span> </a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
-                </tabl --}}e>
+                </table>
             </div>
             <!-- /.table-responsive -->
         </div>
